@@ -7,9 +7,9 @@ SECTION = "base"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
-SRC_URI = "git://github.com/embeddedarm/ts4900-utils.git;branch=master \
+SRC_URI = "git://git@polychrome.ts-local.net/ts/terumo-ts4900-utils.git;protocol=ssh;branch=master \
            file://tssilomon.service"
-SRCREV = "c56c41db10692cf4c6677092ff97cb64dfca3015"
+SRCREV = "4033291ceda8c1484db8fc88821b7b4dde46cdee"
 PV = "1.0.0+git${SRCPV}"
 S = "${WORKDIR}/git"
 
