@@ -1,4 +1,4 @@
-DEPENDS += "kern-tools-native xz-native bc-native lzop-native"
+DEPENDS += "kern-tools-native xz-native bc-native lzop-native linux-firmware"
 
 inherit kernel
 DEFAULT_PREFERENCE = "1"
@@ -18,9 +18,9 @@ LOCAL_VERSION = "-1.0"
 SRCREV = "df2f3229525602ef4eea8eaf410b4302541f60f4"
 LINUX_VERSION = "5.10.41"
 
-do_preconfigure_prepend() {
-   mkdir -p ${S}/firmware/imx/sdma/
-   cp ${D}/lib/firmware/imx/sdma/sdma-imx6q.bin ${S}/firmware/imx/sdma/
+do_configure_prepend() {
+   install -d ${S}/firmware/imx/sdma/ || die "could not make directory"
+   install -m 644 ${STAGING_BASELIBDIR}/firmware/imx/sdma/sdma-imx6q.bin ${S}/firmware/imx/sdma/ || die "could not copy sdma firmware"
 }
 
 SUMMARY = "Linux kernel for TS-Terumo board"
