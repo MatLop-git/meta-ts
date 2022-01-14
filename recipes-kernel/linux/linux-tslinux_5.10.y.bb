@@ -15,7 +15,7 @@ KERNEL_SRC ?= "git://git@polychrome.ts-local.net/ts/linux-terumo.git;protocol=ss
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH} \
            file://defconfig"
 LOCAL_VERSION = "-1.0"
-SRCREV = "d31f335e0ac7d116fe95ac20edcda8af66531c61"
+SRCREV = "607365bab7d0947bdd60ec6724f4cb0b0bc5c09b"
 LINUX_VERSION = "5.10.41"
 
 do_configure_prepend() {
