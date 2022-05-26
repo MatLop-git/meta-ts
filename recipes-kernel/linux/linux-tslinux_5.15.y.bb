@@ -14,7 +14,9 @@ SRCBRANCH = "linux-5.15.y"
 KERNEL_SRC ?= "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH} \
            file://defconfig \
-           file://0005-gpio-gpio-ts4900-Added-device-tree-base-property.patch"
+           file://0001-input-ili251x-Add-ts-controller-support.patch \
+           file://0002-sound-Add-config-option-for-SOC_IMX_MAX98357A.patch \
+           file://0003-ARM-dts-tsterumo-Initial-support.patch"
 LOCAL_VERSION = "-1.0"
 SRCREV = "v5.15.43"
 # May need to use 0e5bb338bf471ec46924f744c4301751bab8793a for srcrev?
