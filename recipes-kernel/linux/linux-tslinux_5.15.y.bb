@@ -3,20 +3,23 @@ DEPENDS += "kern-tools-native xz-native bc-native lzop-native linux-firmware"
 inherit kernel
 DEFAULT_PREFERENCE = "1"
 
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
 
 SCMVERSION ?= "y"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 S = "${WORKDIR}/git"
 
-SRCBRANCH = "tslinux-5.10.y"
-KERNEL_SRC ?= "git://git@polychrome.ts-local.net/ts/linux-terumo.git;protocol=ssh"
+SRCBRANCH = "linux-5.15.y"
+KERNEL_SRC ?= "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git"
 SRC_URI = "${KERNEL_SRC};branch=${SRCBRANCH} \
-           file://defconfig"
+           file://defconfig \
+           file://0005-gpio-gpio-ts4900-Added-device-tree-base-property.patch"
 LOCAL_VERSION = "-1.0"
-SRCREV = "607365bab7d0947bdd60ec6724f4cb0b0bc5c09b"
-LINUX_VERSION = "5.10.41"
+SRCREV = "v5.15.43"
+# May need to use 0e5bb338bf471ec46924f744c4301751bab8793a for srcrev?
+LINUX_VERSION = "5.15.43"
+
 
 do_configure:prepend() {
    install -d ${S}/firmware/imx/sdma/ || die "could not make directory"
