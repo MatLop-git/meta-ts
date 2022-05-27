@@ -1,5 +1,5 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/:"
-FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "file://TIInit_7.6.15.bts"
 SRC_URI += "file://wl127x-nvs.bin"
@@ -11,7 +11,7 @@ SRC_URI += "file://wilc3000_ble_firmware.bin"
 SRC_URI += "file://wilc3000_ble_firmware_no_rtc.bin"
 SRC_URI += "file://wilc.conf"
 
-do_install_append() {
+do_install:append() {
     install -d ${D}/lib/firmware/
     install -d ${D}/lib/firmware/ti-connectivity/
     install -m 0444 ${WORKDIR}/TIInit_7.6.15.bts ${D}/lib/firmware/ti-connectivity/

@@ -13,11 +13,13 @@ SRCREV = "4033291ceda8c1484db8fc88821b7b4dde46cdee"
 PV = "1.0.0+git${SRCPV}"
 S = "${WORKDIR}/git"
 
-RDEPENDS_ts4900-utils = "bash"
+RDEPENDS:ts4900-utils = "bash"
 
 inherit autotools systemd
 
-do_install_append() {
+FILES:${PN} += "${systemd_unitdir}/*"
+
+do_install:append() {
     install -m 0755 ${S}/script/tssilomon ${D}${bindir}
     if ${@bb.utils.contains('DISTRO_FEATURES', 'systemd', 'true', 'false', d)}; then
         install -d ${D}${systemd_unitdir}/system

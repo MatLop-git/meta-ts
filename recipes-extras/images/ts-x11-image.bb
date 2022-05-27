@@ -2,7 +2,7 @@ SUMMARY = "TS X11 Image"
 
 IMAGE_FEATURES += "x11-base debug-tweaks package-management ssh-server-openssh tools-debug nfs-client qtcreator-debug tools-sdk"
 
-IMAGE_INSTALL_append = " \
+IMAGE_INSTALL:append = " \
 	packagegroup-core-boot \
 	packagegroup-core-buildessential \
 	packagegroup-core-full-cmdline \

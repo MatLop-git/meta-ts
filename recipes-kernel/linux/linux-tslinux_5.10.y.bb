@@ -18,7 +18,7 @@ LOCAL_VERSION = "-1.0"
 SRCREV = "607365bab7d0947bdd60ec6724f4cb0b0bc5c09b"
 LINUX_VERSION = "5.10.41"
 
-do_configure_prepend() {
+do_configure:prepend() {
    install -d ${S}/firmware/imx/sdma/ || die "could not make directory"
    install -m 644 ${STAGING_BASELIBDIR}/firmware/imx/sdma/sdma-imx6q.bin ${S}/firmware/imx/sdma/ || die "could not copy sdma firmware"
 }
