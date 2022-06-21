@@ -52,6 +52,7 @@ IMAGE_INSTALL:append = " \
 	matchbox-keyboard \
 	matchbox-terminal \
 	matchbox-wm \
+	mesa-demos \
 	modemmanager \
 	nano \
 	nfs-utils \
@@ -84,6 +85,7 @@ IMAGE_INSTALL:append = " \
 	ttf-dejavu-common \
 	ttf-dejavu-sans \
 	ttf-dejavu-sans-mono \
+	tzdata \
 	usb-modeswitch \
 	usbutils \
 	util-linux-mkfs \
