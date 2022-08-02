@@ -12,6 +12,30 @@
 # the option is a question of removing the # character and making any change to the
 # variable as required.
 
+# Mender settings
+#
+# The name of the disk image and Mender artifact. Different updates must have different
+# names as Mender will skip installation of an Artifact if it is already installed.
+MENDER_ARTIFACT_NAME = "TERUMO_20220831-DEV"
+
+# Note that ext4 features are not supported by U-Boot and Mender doesn't easily offer
+# a way to change partition option. Needs ^metadata_csum,^64bit to support ext4
+# U-Boot.
+ARTIFACTIMG_FSTYPE = "ext3"
+# Do not create a boot partition. Load kernel/FDT from the active Mender partition
+MENDER_BOOT_PART_SIZE_MB = "0"
+# Tune these values as needed for updates
+# MENDER_UPDATE_POLL_INTERVAL_SECONDS = "1800"
+# MENDER_INVENTORY_POLL_INTERVAL_SECONDS = "28800"
+
+# Trying to tune mender features to only what we need
+# Mender provides a number of classes with some features by default. It doesn't look
+# like any of them really fit with this platform. It may be easier to use one of those
+# and instead disable unneeded features. See the Mender manual for more info.
+MENDER_FEATURES_DISABLE:append = " mender-bios mender-grub mender-image-bios imender-image-gpt mender-image-ubi mender-image-uefi mender-partuuid mender-ubi mender-uboot"
+MENDER_FEATURES_ENABLE:append = " mender-growfs-data mender-image mender-image-sd mender-client-install mender-systemd mender-persist-systemd-machine-id"
+
+
 #
 # Machine Selection
 #
