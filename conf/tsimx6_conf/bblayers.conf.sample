@@ -18,4 +18,5 @@ BBLAYERS ?= " \
   ##OEROOT##/../meta-openembedded/meta-networking \
   ##OEROOT##/../meta-ts \
   ##OEROOT##/../meta-qt5 \
+  ##OEROOT##/../meta-mender/meta-mender-core \
   "
