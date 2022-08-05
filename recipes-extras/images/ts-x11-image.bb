@@ -52,6 +52,8 @@ IMAGE_INSTALL:append = " \
 	matchbox-keyboard \
 	matchbox-terminal \
 	matchbox-wm \
+        mender-client \
+        mender-server-certificate \
 	mesa-demos \
 	modemmanager \
 	nano \
@@ -86,6 +88,7 @@ IMAGE_INSTALL:append = " \
 	ttf-dejavu-sans \
 	ttf-dejavu-sans-mono \
 	tzdata \
+	u-boot-fw-utils \
 	usb-modeswitch \
 	usbutils \
 	util-linux-mkfs \
