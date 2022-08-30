@@ -52,8 +52,9 @@ IMAGE_INSTALL:append = " \
 	matchbox-keyboard \
 	matchbox-terminal \
 	matchbox-wm \
-        mender-client \
-        mender-server-certificate \
+	mender-client \
+	mender-printenv-overlay \
+	mender-server-certificate \
 	mesa-demos \
 	modemmanager \
 	nano \
